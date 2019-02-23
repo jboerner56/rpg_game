@@ -185,7 +185,7 @@ class Battle(object):
                 exit(0)
                 # for accessing the store
             elif user_input1 == 4:
-                shopping_engine.do_shopping()
+                shopping_engine.do_shopping(hero)
             else:
                 print("Invalid input %r" % user_input1)
                 continue
@@ -221,6 +221,7 @@ class Armor(object):
     name = "Armor"
     def apply(self, hero):
         enemy.power -= 2
+        print("%s power has been decreased to %d" % (enemy.name, enemy.power))
 class Evade(object):
     cost = 5
     name = "evade"
@@ -231,7 +232,7 @@ class Store(object):
     # If you define a variable in the scope of a class:
     # This is a class variable and you can access it like
     # Store.items => [Tonic, Sword]
-    items = [Tonic, Sword, SuperTonic, Armor]
+    items = [Tonic, Sword, SuperTonic, Armor, Evade]
     def do_shopping(self, hero):
         while True:
             print("=====================")

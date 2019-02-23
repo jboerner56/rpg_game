@@ -96,12 +96,10 @@ class Shadow(Character):
         self.health = 1
         self.power = 7
     def receive_damage(self, damage):
-        print("you are attacking the shadow")
+
         if random.randint(1,10) < 2:
             self.health -= damage
-            print("little better you hit")
-        else:
-            print("you suck you missed")
+
         # self.receive_damage = enemies[3].power
         # else:
         #     self.receive_damage = 0

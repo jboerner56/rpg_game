@@ -49,7 +49,7 @@ class Hero(Character):
 
     def restore(self):
         self.health = 10
-        print("%s heath is restored to %d!" % (self.name, self.health))
+        print("%s health is restored to %d!" % (self.name, self.health))
         time.sleep(1)
 
     def buy(self, item):
@@ -215,16 +215,18 @@ class SuperTonic(object):
     name = "supertonic"
     def apply(self, hero):
         hero.health += 10
-        print("%s's health increased to %d" % (hero.name, hero.power))
+        print("%s's health increased to %d" % (hero.name, hero.health))
+
 class Armor(object):
     cost = 5
     name = "Armor"
+    
     def apply(self, hero):
-        enemy.power -= 2
-        print("%s power has been decreased to %d" % (enemy.name, enemy.power))
+        hero.health += 2
+        print("%s health has been increased to %d" % (hero.name, hero.power))
 class Evade(object):
     cost = 5
-    name = "evade"
+    name = "Evade"
     def apply(self, hero):
         if evade_points == 2 and random.randint(1,10) == 10: 
             enemy.power = 0
